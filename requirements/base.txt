@@ -1,0 +1,22 @@
+django==1.10.5
+
+django-environ==0.4.1
+
+# For user registration, either via email or social
+# Well-built with regular release cycles!
+django-allauth==0.30.0
+
+# Django REST Framework
+djangorestframework==3.6.1
+
+# Django REST Auth
+django-rest-auth
+
+# Allow CORS
+django-cors-headers
+
+# JSON Web Token Authentication
+djangorestframework-jwt==1.9.0
+
+# CoreAPI
+coreapi==2.3.0
