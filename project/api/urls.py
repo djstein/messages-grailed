@@ -20,6 +20,6 @@ urlpatterns = [
     url(r'^schema/$', schema_view),
     url(r'^', include(router.urls)),
     url(r'^', include('rest_auth.urls')),
-    url(r'^registration/$', include('rest_auth.registration.urls')),
+    url(r'^registration/', include('rest_auth.registration.urls')),
     url(r'^api-token-auth/', views.obtain_auth_token), # fet token with username and password
 ]
