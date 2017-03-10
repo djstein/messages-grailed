@@ -30,6 +30,17 @@ Users:
 
 View their messages!
 
+## Using Terminal Commands
+In a second terminal that is not the server running, activate the virtualenv to make requests at the API.
+Use [Curl](https://curl.haxx.se/)  in the terminal to access the API (demonstrate its availablity through Web Applications, React Native, etc).
+```bash
+# Login test user
+curl -X POST -d "username=test&password=test1234" http://localhost:8000/login/
+
+# You will get an authentication token back! Use this format to make other commands!
+curl -H 'Accept: application/json; indent=4' -H 'Authorization: JWT <token>' http://localhost:8000/channels/1/
+```
+
 ## API Explination
 This API does the following:
 - register Users
