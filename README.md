@@ -30,9 +30,9 @@ Once running open the API at [localhost:8000](http://localhost:8000)
 ## Example Data
 There is already a set of example data and users.
 Users:
-Username: Admin Password: admin1234
-Username: tricky_rick Password: geobaskets
-Username: test Password: test1234
+- Username: Admin Password: admin1234
+- Username: tricky_rick Password: geobaskets
+- Username: test Password: test1234
 
 View their messages!
 
