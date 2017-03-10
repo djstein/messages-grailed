@@ -20,6 +20,8 @@ python manage.py runserver
 ```
 
 Once running open the API at [localhost:8000](http://localhost:8000)
+View the data in JSON format by appendning ```http://localhost:8000/?format=json```
+Or by clicking the dropdown on the GET and clicking json
 
 ## Example Data
 There is already a set of example data and users.
