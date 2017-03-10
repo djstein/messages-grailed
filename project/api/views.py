@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from project.api.models import Channel, Message
-from project.api.permissions import IsOwnerOrReadOnly
+from project.api.permissions import IsOwner, IsOwnerOrReadOnly, IsUser, IsUserIncluded
 from project.api.serializers import  ChannelSerializer, MessageSerializer, UserSerializer
 from rest_framework import permissions, viewsets, mixins
 from rest_framework.decorators import api_view
@@ -32,11 +32,13 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    permission_classes  = (IsUser,)
 
 
 class ChannelViewSet(viewsets.ModelViewSet):
     queryset = Channel.objects.all()
     serializer_class = ChannelSerializer
+    permission_classes  = (IsUserIncluded,)
 
 
 class MessageViewSet(CreateListRetrieveViewSet):
@@ -47,7 +49,7 @@ class MessageViewSet(CreateListRetrieveViewSet):
     """
     queryset = Message.objects.all()
     serializer_class = MessageSerializer
-    permission_class = (IsOwnerOrReadOnly,)
+    permission_classes  = (IsOwner,)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
