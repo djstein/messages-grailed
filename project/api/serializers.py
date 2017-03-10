@@ -21,8 +21,9 @@ class ChannelSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class MessageSerializer(serializers.HyperlinkedModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name="message-detail")
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Message
-        fields = ('owner', 'channel', 'date', 'text')
+        fields = ('url', 'owner', 'channel', 'date', 'text')
