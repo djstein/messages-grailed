@@ -15,12 +15,6 @@ source venv/bin/activate
 # Install the pip requirements
 pip install -Ur requirements/local.txt
 
-# Create migrations
-python manage.py makemigrations
-
-# Add migrations
-python manage.py migrate
-
 # Runserver
 python manage.py runserver
 ```
