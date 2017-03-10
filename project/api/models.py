@@ -15,5 +15,9 @@ class Message(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     text = models.TextField()
 
+    class Meta:
+        unique_together = ('channel', 'date')
+        ordering = ['date']
+
     def __str__(self):
         return '%s: %s' % (self.owner.username, self.text)
